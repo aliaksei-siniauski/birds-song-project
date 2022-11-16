@@ -1,0 +1,52 @@
+@mixin font-face($font-family, $url, $weight, $style) {
+  @font-face {
+    font-family: "#{$font-family}";
+    src: url("../fonts/#{$url}.woff") format("woff"),
+      url("../fonts/#{$url}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: $style;
+  }
+}
+
+@mixin font($size, $height, $weight: $regular, $style: normal) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin columns($width) {
+  @extend %flex;
+  @extend %flex-wrap;
+  @extend %js-content-space-between;
+  > * {
+    flex-basis: $width;
+  }
+}
+
+/* Meida quaries */
+
+@mixin media-desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin media-small-desktop {
+  @media (min-width: $small-desktop-width) {
+    @content;
+  }
+}
+
+@mixin media-tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin media-mobile {
+  @media (min-width: $mobile-width) {
+    @content;
+  }
+}

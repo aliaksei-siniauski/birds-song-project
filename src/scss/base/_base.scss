@@ -1,0 +1,10 @@
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  @extend %flex;
+  @extend %flex-column;
+  @extend %js-content-space-between;
+  font-family: $font-family-main;
+  @include font($main-size, $line-height-main);
+  color: $color-text-main;
+}
