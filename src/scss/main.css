@@ -1,0 +1,177 @@
+/* Abstracts */
+.list, .header__top, body {
+  display: flex;
+}
+
+body {
+  flex-direction: column;
+}
+
+.list, .header__top, body {
+  justify-content: space-between;
+}
+
+.header__top {
+  align-items: center;
+}
+
+/* Colors */
+/* size */
+/* Base */
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: #222222;
+  font-size: 2rem;
+  color: white;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  font-size: 10px;
+  scroll-behavior: smooth;
+  overflow: auto;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list],
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  display: block;
+  height: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+section,
+main,
+footer,
+header,
+article {
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*Utilities  */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Layout  */
+/* Components */
+.logo {
+  display: block;
+  width: 200px;
+  height: 55px;
+  background-image: url("/src/images/quiz-logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.menu {
+  padding: 4rem 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.list {
+  flex-wrap: wrap;
+}
+
+.list__item {
+  flex: auto;
+  text-align: center;
+}
+
+.list__link {
+  display: block;
+  background: #008966;
+  padding: 1rem 2rem;
+  margin-left: 0;
+  line-height: 1.25;
+  border: 1px solid;
+  border-color: #007c5d;
+  transition: ease-in-out 0.5s;
+}
+.list__link:hover {
+  background: #00bc8c;
+}
+.list__link--active {
+  background: #00bc8c;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,38 @@
+.menu {
+    padding: 4rem 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.list {
+    @extend %flex;
+    flex-wrap: wrap;
+    @extend %js-content-space-between;
+
+}
+
+.list__item {
+    flex: auto;
+    text-align: center;
+}
+
+.list__link {
+    display: block;
+    background: $color-menu;
+    padding: 1rem 2rem;
+    margin-left: 0;
+    line-height: 1.25;
+    border: 1px solid;
+    border-color: $color-border-menu;
+    transition: ease-in-out .5s;
+
+    &:hover {
+        background: $color-active-menu;
+    }
+
+    &--active {
+        background: $color-active-menu;
+
+    }
+
+}
