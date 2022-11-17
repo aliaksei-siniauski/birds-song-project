@@ -3,7 +3,6 @@ body {
   min-height: 100vh;
   @extend %flex;
   @extend %flex-column;
-  @extend %js-content-space-between;
   background: $color-body-bg;
   font-size: $size-main;
   color: $color-light;

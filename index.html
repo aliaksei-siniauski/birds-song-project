@@ -40,8 +40,40 @@
       </nav> <!-- close menu -->
     </div> <!-- close header-container -->
   </header>
-  <main></main>
-  <footer></footer>
+  <main>
+    <div class="question">
+      <div class="container question__container">
+        <img src="src/images/bird.jpg" class="question__img" alt="bird">
+        <div class="question__content">
+          <h2 class="bird__title">*****</h2>
+          <div class="player">
+            <div class="player-controls">
+              <button class="play player-icon"></button>
+            </div> <!-- close player-controls -->
+            <div class="progress">
+              <div class="slider-timeline">
+                <div class="current-time">00:00</div>
+                <div class="timeline">
+                  <div class="progress-bar"></div>
+                </div>
+                <div class="total-time">00:25</div>
+              </div>
+              <!-- close slider-titmeline -->
+              <div class="volume">
+                <button class="volume-icon"></button>
+                <input class="volume-range" type="range" value="50" min="0" max="100" name="volume" />
+                <progress class="volume-progress" min="0" max="100" value="50"></progress>
+              </div>
+            </div>
+
+          </div> <!-- close player -->
+        </div> <!-- question-content -->
+      </div> <!-- close container -->
+    </div> <!-- close question -->
+  </main>
+  <footer>
+
+  </footer>
 </body>
 
 </html>

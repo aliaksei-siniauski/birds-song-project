@@ -1,0 +1,13 @@
+.question {}
+
+.question__container {
+    @extend %flex;
+    justify-content: space-between;
+    gap: 5rem;
+    background: $color-bg;
+    padding: 1rem;
+}
+
+.question__content {
+    width: 100%;
+}
