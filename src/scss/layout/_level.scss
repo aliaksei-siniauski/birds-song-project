@@ -1,0 +1,22 @@
+.level__container {
+    display: flex;
+    padding: 0 0 1.2rem 0;
+
+}
+
+.level__button {
+    display: inline-block;
+    width: 100%;
+    background: #303030;
+    color: $color-light;
+    border: none;
+    padding: 1.5rem 0;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        color: red;
+        transition: ease-in-out .5s;
+    }
+
+}

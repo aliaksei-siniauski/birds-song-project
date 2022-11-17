@@ -1,0 +1,9 @@
+.card-display {
+    display: none;
+}
+
+.card__description {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

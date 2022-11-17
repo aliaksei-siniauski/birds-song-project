@@ -1,7 +1,9 @@
+.header {
+    padding: 2rem 0 1.2rem;
+}
+
 .header__top {
     @extend %flex;
     @extend %al-items-center;
     @extend %js-content-space-between;
-
-
 }

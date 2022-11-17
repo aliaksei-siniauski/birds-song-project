@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <header>
+  <header class="header">
     <div class="container header__container">
       <div class="header__top">
         <a class="logo header__logo" href="index.html"></a>
@@ -70,9 +70,71 @@
         </div> <!-- question-content -->
       </div> <!-- close container -->
     </div> <!-- close question -->
+    <div class="answers">
+      <div class="container answers__container layout-2-column">
+        <div class="answer">
+          <ul class="answer-list">
+            <li class="answer-list__item">
+              <span class="cicle"></span>Крумкач
+            </li>
+            <li class="answer-list__item">
+              <span class="cicle"></span>Журавель
+            </li>
+            <li class="answer-list__item">
+              <span class="cicle"></span>Ластаўка
+            </li>
+            <li class="answer-list__item">
+              <span class="cicle"></span>Ляляк
+            </li>
+            <li class="answer-list__item">
+              <span class="cicle"></span>Зязюля
+            </li>
+            <li class="answer-list__item">
+              <span class="cicle"></span>Сініца
+            </li>
+          </ul> <!-- close answer-list -->
+        </div> <!-- close answer -->
+        <div class="bird-description">
+          <div class="instruction"></div>
+          <p class="instruction__item">Паслухай плэйер</p>
+          <p class="instruction__item">Выбяры птушку з спіса</p>
+          <div class="card card-display">
+            <img class="bird-img" src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg" alt="Крумкач">
+            <div class="card__description">
+              <h3 class="card__name">Крумкач</h3>
+              <span class="card__soecies">Corvus corax</span>
+              <div class="player card-player">
+                <div class="player-controls">
+                  <button class="play player-icon"></button>
+                </div> <!-- close player-controls -->
+                <div class="progress">
+                  <div class="slider-timeline">
+                    <div class="current-time">00:00</div>
+                    <div class="timeline">
+                      <div class="progress-bar"></div>
+                    </div>
+                    <div class="total-time">00:25</div>
+                  </div>
+                  <!-- close slider-titmeline -->
+                  <div class="volume">
+                    <button class="volume-icon"></button>
+                    <input class="volume-range" type="range" value="50" min="0" max="100" name="volume" />
+                    <progress class="volume-progress" min="0" max="100" value="50"></progress>
+                  </div>
+                </div>
+              </div> <!-- close player -->
+            </div> <!-- close card-description -->
+          </div> <!-- close card -->
+        </div> <!-- clsoe bird-description -->
+      </div> <!-- close container -->
+    </div> <!-- close answers -->
+    <div class="level">
+      <div class="container level__container">
+        <button class="level__button">Next Level</button>
+      </div>
+    </div>
   </main>
   <footer>
-
   </footer>
 </body>
 

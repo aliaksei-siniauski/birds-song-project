@@ -27,3 +27,13 @@
     cursor: pointer;
     transition: 0.3s;
 }
+
+
+@mixin columns($width) {
+    @extend %flex;
+    @extend %js-content-space-between;
+
+    >* {
+        flex-basis: $width;
+    }
+}
