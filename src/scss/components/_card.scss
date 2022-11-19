@@ -1,3 +1,7 @@
+.card {
+    padding: 2rem;
+}
+
 .card-display {
     display: none;
 }
@@ -15,11 +19,16 @@
 }
 
 .card-top {
-    display: flex;justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
     gap: 2rem;
 }
 
 .card-player {
     width: 70%;
 
+}
+
+.card__text {
+    text-align: justify;
 }

@@ -3,9 +3,13 @@ import { birdsDataBy } from './js/birds.js'
 
 let questionIndex = 0; // current question
 let score = 0;
+let stage = 0;
+let gameScore = document.querySelector(".score__point")
+
+
+let currentItemSong = new Audio('/src/music/correct-answer.wav')
+let wrongItemSong = new Audio('/src/music/wrong-answer.mp3')
 let currentBirdVoice = new Audio();
-let currentItemSong = new Audio()
-let wrongItemSong = new Audio
 
 /* BirdCard settings */
 
@@ -14,7 +18,8 @@ const cardBirdImage = document.querySelector('.card__img');
 const cardBirdSoecies = document.querySelector('.card__soecies');
 const cardBirdText = document.querySelector('.card__text');
 const birdItem = document.querySelectorAll('.answer-list__item')
-
+const birdTitle = document.querySelector(".question__content .bird__title");
+const birdImage = document.querySelector('.question-bird__img')
 
 showQuestion()
 
@@ -27,20 +32,25 @@ function showQuestion() {
   let currentQuestionItem = birdsDataBy[questionIndex];
   let randomAnswerOfQuestion = currentQuestionItem[getRandomNum()];
   currentBirdVoice.src = randomAnswerOfQuestion.audio;
+  let maxScore = 5;
 
   birdItem.forEach((item) => {
     item.addEventListener('click', showBirdItemInformation)
+    item.addEventListener('click', showRightAnswer)
+
   })
 
   function showBirdItemInformation() {
-    const birdCard = document.querySelector(".card")
-    const instruction = document.querySelector(".instruction")
-    birdCard.classList.remove("card-display")
-    instruction.classList.add("instruction-display")
-    let birdItemName = this.querySelector(".bird-title")
+    const birdCard = document.querySelector(".card");
+    const instruction = document.querySelector(".instruction");
+    birdCard.classList.remove("card-display");
+    instruction.classList.add("instruction-display");
+    let birdItemName = this.querySelector(".bird-title");
     for (let i = 0; i < currentQuestionItem.length; i++) {
       if (birdItemName.textContent === currentQuestionItem[i].name) {
         cardBirdImage.src = currentQuestionItem[i].image;
+        cardBirdImage.style.width = "200";
+        audioBird.src = currentQuestionItem[i].audio;
         cardBirdName.textContent = currentQuestionItem[i].name;
         cardBirdSoecies.textContent = currentQuestionItem[i].species;
         cardBirdText.textContent = currentQuestionItem[i].description
@@ -48,20 +58,49 @@ function showQuestion() {
     }
   }
 
+  function showRightAnswer() {
+    let birdItemName = this.querySelector(".bird-title")
+    let cicle = this.querySelector(".cicle");
+    if (birdItemName.textContent === randomAnswerOfQuestion.name) {
+      cicle.style.backgroundColor = 'green';
+      birdItemName.style.color = 'green';
+      score += maxScore;
+      gameScore.textContent = score;
+      currentItemSong.muted = false;
+      currentItemSong.currentTime = 0;
+      currentItemSong.play();
+      birdImage.src = randomAnswerOfQuestion.image;
+      birdTitle.textContent = randomAnswerOfQuestion.name;
+      birdItem.forEach(item => {
+        item.removeEventListener('click', showRightAnswer);
+      });
+      console.log("Thi is current answer");
+      if (stage < 5) {
+        stage++;
+      }
+    }
+    else {
+      cicle.style.backgroundColor = 'red';
+      birdItemName.style.color = 'red';
+      wrongItemSong.muted = false;
+      wrongItemSong.currentTime = 0;
+      wrongItemSong.play();
+      this.removeEventListener('click', showRightAnswer);
+      maxScore--;
+
+
+    }
+  }
+
 }
 
 
-
-function showRightAnswer() {
-
-}
 
 
 /* Audio */
 
-let audioPlayQuestion = document.querySelector('.question__player-icon')
+let audioPlayQuestion = document.querySelector('.player-icon')
 audioPlayQuestion.addEventListener('click', playAudioQuestion);
-
 
 let currentTime = 0;
 let isPlay = false;

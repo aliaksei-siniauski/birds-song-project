@@ -152,7 +152,7 @@ article {
 
 /* Layout  */
 .header {
-  padding: 2rem 0 1.2rem;
+  padding: 0.4rem 0;
 }
 
 .question__container {
@@ -165,8 +165,12 @@ article {
   width: 100%;
 }
 
+.question-bird__img {
+  width: 300px;
+}
+
 .answers {
-  padding: 1rem 0;
+  padding: 0.4rem 0;
 }
 
 .answer-list__item {
@@ -174,7 +178,7 @@ article {
   align-items: center;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  padding: 1.8rem;
+  padding: 2.5rem;
   background-color: #303030;
   font-size: 2vh;
   border: 1px solid #555;
@@ -224,7 +228,7 @@ article {
 
 .level__container {
   display: flex;
-  padding: 0 0 1.2rem 0;
+  padding: 0 0 0.4rem 0;
 }
 
 .level__button {
@@ -233,7 +237,7 @@ article {
   background: #303030;
   color: white;
   border: none;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   text-align: center;
   cursor: pointer;
 }
@@ -450,6 +454,10 @@ article {
   transition: ease-in-out 0.5s;
 }
 
+.card {
+  padding: 2rem;
+}
+
 .card-display {
   display: none;
 }
@@ -473,6 +481,10 @@ article {
 
 .card-player {
   width: 70%;
+}
+
+.card__text {
+  text-align: justify;
 }
 
 /*# sourceMappingURL=main.css.map */
