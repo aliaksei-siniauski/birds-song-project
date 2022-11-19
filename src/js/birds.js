@@ -1,6 +1,6 @@
 export const birdsDataBy = [
   [
-    {
+    { 
       id: 1,
       name: "Крумкач",
       species: "Corvus corax",

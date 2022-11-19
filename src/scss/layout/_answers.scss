@@ -10,6 +10,7 @@
     border-top-right-radius: 0.25rem;
     padding: 1.8rem;
     background-color: #303030;
+    font-size: 2vh;
     border: 1px solid #555;
     cursor: pointer;
 
@@ -34,6 +35,19 @@
     border-radius: 50%;
     -webkit-transition: .1s;
     transition: .1s;
+}
+
+.instruction {
+    display: flex;
+    align-items: center;
+    padding: 5rem 0;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.instruction__item {
+    font-size: 3vh;
 }
 
 .bird-description {

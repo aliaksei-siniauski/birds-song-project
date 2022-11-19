@@ -46,17 +46,17 @@
         <img src="src/images/bird.jpg" class="question__img" alt="bird">
         <div class="question__content">
           <h2 class="bird__title">*****</h2>
-          <div class="player">
+          <div class="player question__player">
             <div class="player-controls">
-              <button class="play player-icon"></button>
+              <button class="play player-icon question__player-icon"></button>
             </div> <!-- close player-controls -->
             <div class="progress">
               <div class="slider-timeline">
-                <div class="current-time">00:00</div>
+                <div class="current-time">0:00</div>
                 <div class="timeline">
                   <div class="progress-bar"></div>
                 </div>
-                <div class="total-time">00:25</div>
+                <div class="total-time">00:00</div>
               </div>
               <!-- close slider-titmeline -->
               <div class="volume">
@@ -65,7 +65,6 @@
                 <progress class="volume-progress" min="0" max="100" value="50"></progress>
               </div>
             </div>
-
           </div> <!-- close player -->
         </div> <!-- question-content -->
       </div> <!-- close container -->
@@ -95,9 +94,10 @@
           </ul> <!-- close answer-list -->
         </div> <!-- close answer -->
         <div class="bird-description">
-          <div class="instruction"></div>
-          <p class="instruction__item">Паслухай плэйер</p>
-          <p class="instruction__item">Выбяры птушку з спіса</p>
+          <div class="instruction">
+            <p class="instruction__item">Паслухай плэйер</p>
+            <p class="instruction__item">Выбяры птушку з спіса</p>
+          </div>
           <div class="card card-display">
             <img class="bird-img" src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg" alt="Крумкач">
             <div class="card__description">
@@ -130,12 +130,13 @@
     </div> <!-- close answers -->
     <div class="level">
       <div class="container level__container">
-        <button class="level__button">Next Level</button>
+        <button class="level__button">Наступны ўзровень</button>
       </div>
     </div>
   </main>
   <footer>
   </footer>
+  <script type="module" src="src/index.js"></script>
 </body>
 
 </html>

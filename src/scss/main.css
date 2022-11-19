@@ -176,6 +176,7 @@ article {
   border-top-right-radius: 0.25rem;
   padding: 1.8rem;
   background-color: #303030;
+  font-size: 2vh;
   border: 1px solid #555;
   cursor: pointer;
 }
@@ -199,6 +200,19 @@ article {
   border-radius: 50%;
   -webkit-transition: 0.1s;
   transition: 0.1s;
+}
+
+.instruction {
+  display: flex;
+  align-items: center;
+  padding: 5rem 0;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.instruction__item {
+  font-size: 3vh;
 }
 
 .bird-description {
@@ -355,6 +369,7 @@ article {
 .progress-bar {
   height: 5px;
   border-radius: 0.5rem;
+  background: white;
 }
 
 /* volume */

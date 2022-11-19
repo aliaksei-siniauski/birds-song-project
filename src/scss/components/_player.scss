@@ -70,9 +70,6 @@
 
 /* Progress */
 
-
-
-
 .slider-timeline {
     display: flex;
     justify-content: space-between;
@@ -103,7 +100,7 @@
 .progress-bar {
     height: 5px;
     border-radius: 0.5rem;
-
+    background: $color-light;
 }
 
 /* volume */
