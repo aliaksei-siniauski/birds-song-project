@@ -43,11 +43,7 @@
 
 .player-icon {
     @extend %icon-block;
-
-    &:hover {}
 }
-
-.player-icon:active {}
 
 .play {
     width: 40px;
@@ -106,15 +102,17 @@
 /* volume */
 
 .volume {
+    position: relative;
     @extend %flex;
     @extend %al-items-center;
+    justify-content: flex-end;
+    padding-right: 120px;
 }
 
 .volume-icon {
     @extend %icon-block;
     background-image: url("/src/svg/volume.svg");
     background-repeat: no-repeat;
-    background-size: 20px 20px;
     background-position: -0.5px center;
 }
 
@@ -123,12 +121,7 @@
     filter: brightness(0) invert(1);
 }
 
-.volume {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 
 .volume-progress {
     position: absolute;

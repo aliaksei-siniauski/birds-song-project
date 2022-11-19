@@ -7,3 +7,19 @@
     flex-direction: column;
     gap: 2rem;
 }
+
+.card__img {
+    width: 180px;
+    height: 160px;
+
+}
+
+.card-top {
+    display: flex;justify-content: space-between;
+    gap: 2rem;
+}
+
+.card-player {
+    width: 70%;
+
+}

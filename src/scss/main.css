@@ -210,6 +210,9 @@ article {
   flex-direction: column;
   gap: 4rem;
 }
+.instruction.instruction-display {
+  display: none;
+}
 
 .instruction__item {
   font-size: 3vh;
@@ -373,23 +376,21 @@ article {
 }
 
 /* volume */
+.volume {
+  position: relative;
+  justify-content: flex-end;
+  padding-right: 120px;
+}
+
 .volume-icon {
   background-image: url("/src/svg/volume.svg");
   background-repeat: no-repeat;
-  background-size: 20px 20px;
   background-position: -0.5px center;
 }
 
 .mute {
   background-image: url("/src/svg/volume-mute.svg");
   filter: brightness(0) invert(1);
-}
-
-.volume {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .volume-progress {
@@ -457,6 +458,21 @@ article {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.card__img {
+  width: 180px;
+  height: 160px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.card-player {
+  width: 70%;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -44,6 +44,10 @@
     justify-content: center;
     flex-direction: column;
     gap: 4rem;
+
+    &.instruction-display {
+        display: none;
+    }
 }
 
 .instruction__item {
