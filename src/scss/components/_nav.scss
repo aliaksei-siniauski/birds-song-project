@@ -25,10 +25,6 @@
     border-color: $color-border-menu;
     transition: ease-in-out .5s;
 
-    &:hover {
-        background: $color-active-menu;
-    }
-
     &--active {
         background: $color-active-menu;
 

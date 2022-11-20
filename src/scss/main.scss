@@ -23,7 +23,7 @@
 @import "layout/answers";
 @import "layout/level";
 @import "layout/footer";
-
+@import "layout/popUp";
 
 
 /* Components */
@@ -32,3 +32,8 @@
 @import "components/nav";
 @import "components/player";
 @import "components/card";
+@import "components/button";
+
+/* Pages */
+
+@import "pages/start";

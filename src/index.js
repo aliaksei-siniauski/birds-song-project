@@ -3,13 +3,15 @@ import { birdsDataBy } from './js/birds.js'
 
 let questionIndex = 0; // current question
 let score = 0;
-let stage = 0;
 let gameScore = document.querySelector(".score__point")
 
 
 let currentItemSong = new Audio('/src/music/correct-answer.wav')
 let wrongItemSong = new Audio('/src/music/wrong-answer.mp3')
 let currentBirdVoice = new Audio();
+let currentTime = 0;
+let isPlay = false;
+let audioBird = new Audio();
 
 /* BirdCard settings */
 
@@ -18,8 +20,19 @@ const cardBirdImage = document.querySelector('.card__img');
 const cardBirdSoecies = document.querySelector('.card__soecies');
 const cardBirdText = document.querySelector('.card__text');
 const birdItem = document.querySelectorAll('.answer-list__item')
-const birdTitle = document.querySelector(".question__content .bird__title");
+const birdTitle = document.querySelector(".question__title");
 const birdImage = document.querySelector('.question-bird__img')
+const birdCard = document.querySelector(".card");
+const instruction = document.querySelector(".instruction");
+const levelButton = document.querySelector('.level__button')
+const categoryLink = document.querySelectorAll('.list__link')
+const birdItemName = document.querySelectorAll(".bird-title")
+const cicleItems = document.querySelectorAll(".cicle")
+let audioPlayQuestion = document.querySelector('.player-icon')
+const gaveOverScore = document.querySelector('.game-over__subtitle')
+
+
+
 
 showQuestion()
 
@@ -33,7 +46,9 @@ function showQuestion() {
   let randomAnswerOfQuestion = currentQuestionItem[getRandomNum()];
   currentBirdVoice.src = randomAnswerOfQuestion.audio;
   let maxScore = 5;
-
+  for (let i = 0; i < birdItemName.length; i++) {
+    birdItemName[i].textContent = currentQuestionItem[i].name;
+  }
   birdItem.forEach((item) => {
     item.addEventListener('click', showBirdItemInformation)
     item.addEventListener('click', showRightAnswer)
@@ -41,8 +56,6 @@ function showQuestion() {
   })
 
   function showBirdItemInformation() {
-    const birdCard = document.querySelector(".card");
-    const instruction = document.querySelector(".instruction");
     birdCard.classList.remove("card-display");
     instruction.classList.add("instruction-display");
     let birdItemName = this.querySelector(".bird-title");
@@ -64,6 +77,9 @@ function showQuestion() {
     if (birdItemName.textContent === randomAnswerOfQuestion.name) {
       cicle.style.backgroundColor = 'green';
       birdItemName.style.color = 'green';
+      levelButton.style.color = 'green';
+      levelButton.style.backgroundColor = '#00bc8c';
+      levelButton.removeAttribute = 'disabled';
       score += maxScore;
       gameScore.textContent = score;
       currentItemSong.muted = false;
@@ -74,9 +90,9 @@ function showQuestion() {
       birdItem.forEach(item => {
         item.removeEventListener('click', showRightAnswer);
       });
-      console.log("Thi is current answer");
-      if (stage < 5) {
-        stage++;
+      console.log("This is current answer");
+      if (questionIndex < 5) {
+        questionIndex++;
       }
     }
     else {
@@ -87,25 +103,47 @@ function showQuestion() {
       wrongItemSong.play();
       this.removeEventListener('click', showRightAnswer);
       maxScore--;
-
-
     }
   }
 
 }
 
 
+function goToTheNextLevel() {
+  levelButton.style.color = "red";
+  levelButton.style.backgroundColor = '#303030';
+  birdCard.classList.add("card-display");
+  instruction.classList.remove("instruction-display");
+  birdImage.src = '/src/images/bird.jpg';
+  birdTitle.textContent = '*****';
+  for (let i = 0; i < birdItem.length; i++) {
+    cicleItems[i].style.backgroundColor = '#444'
+    categoryLink[i].classList.remove('list__link--active');
+    birdItemName[i].style.color = 'white';
+  }
+  categoryLink[questionIndex].classList.add('list__link--active')
+  showQuestion();
+  audioPlayQuestion.classList.remove("pause");
+  isPlay = false;
+
+  if (questionIndex === 5) {
+    levelButton.textContent = 'Паспрабаваць яшчэ';
+    showFinishModal()
+  }
+}
+levelButton.addEventListener("click", goToTheNextLevel)
+
+
+function showFinishModal() {
+  const main = document.querySelector('main')
+  main.textContent = '';
+  gaveOverScore.textContent = "Вы прайшлі віктаріну з вынікам + 'score' + '/30'. Паспрабаваць яшчэ?";
+}
 
 
 /* Audio */
 
-let audioPlayQuestion = document.querySelector('.player-icon')
 audioPlayQuestion.addEventListener('click', playAudioQuestion);
-
-let currentTime = 0;
-let isPlay = false;
-let audioBird = new Audio();
-
 
 function playAudioQuestion() {
   audioBird.currentTime = 0;
