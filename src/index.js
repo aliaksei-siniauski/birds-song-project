@@ -63,6 +63,7 @@ function showQuestion() {
   })
 
   function showBirdItemInformation() {
+    pauseCurrentSong();
     birdCard.classList.remove("card-display");
     instruction.classList.add("instruction-display");
     let birdItemName = this.querySelector(".bird-title");
@@ -76,7 +77,6 @@ function showQuestion() {
         cardBirdText.textContent = currentQuestionItem[i].description
       }
     }
-    pauseBirdSongInfo()
     loadedInfoAudioBirdSong();
   }
 
@@ -124,7 +124,9 @@ showQuestion()
 function goToTheNextLevel() {
   pauseCurrentSong()
   songCurrentTime.textContent = "0:00";
-  audioProgress.style.width = "0" + '%';
+  pauseBirdSongInfo()
+  songCurrentTimeInfoBird.textContent = "0:00";
+  audioProgressInfoBird.style.width = "0" + '%';
   levelButton.style.color = "red";
   levelButton.style.backgroundColor = '#303030';
   birdCard.classList.add("card-display");
@@ -178,6 +180,7 @@ function loadedInfoAudioBirdSong() {
 
 
 function playAudioQuestion() {
+
   if (!isPlay) {
     playCurrentSong()
     isPlay = true;
