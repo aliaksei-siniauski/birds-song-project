@@ -3,8 +3,8 @@ import { birdsDataBy } from './js/birds.js'
 
 
 let questionIndex = 0; // current question
-let score = 0;
-let gameScore = document.querySelector(".score__point")
+let point = 0;
+let gameScore = document.querySelector(".point__point")
 
 
 let currentItemSong = new Audio('/src/music/correct-answer.wav')
@@ -89,8 +89,8 @@ function showQuestion() {
       levelButton.style.color = 'green';
       levelButton.style.backgroundColor = '#00bc8c';
       levelButton.removeAttribute = 'disabled';
-      score += maxScore;
-      gameScore.textContent = score;
+      point += maxScore;
+      gameScore.textContent = point;
       currentItemSong.muted = false;
       currentItemSong.currentTime = 0;
       currentItemSong.play();
@@ -123,6 +123,7 @@ showQuestion()
 function goToTheNextLevel() {
   pauseCurrentSong()
   songCurrentTime.textContent = "0:00";
+  audioProgress.style.width = "0" + '%';
   pauseBirdSongInfo()
   songCurrentTimeInfoBird.textContent = "0:00";
   audioProgressInfoBird.style.width = "0" + '%';
@@ -155,8 +156,11 @@ levelButton.addEventListener("click", goToTheNextLevel)
 
 function showFinishModal() {
   gameOver.classList.remove('game-over--display');
-  gaveOverScore.textContent = "Вы прайшлі віктаріну з вынікам " + score + "/30. Паспрабаваць яшчэ?";
-
+  if (point !== 30) {
+    gaveOverScore.textContent = "Вы прайшлі віктаріну з вынікам " + point + "/30. Паспрабаваць яшчэ?";
+  } else {
+    gaveOverScore.textContent = "Вы прайшлі віктаріну з вынікам " + point + "/30. Вы вельмі ўважлівы чалавек!!! Паспрабаваць яшчэ?";
+  }
 }
 
 
