@@ -63,7 +63,6 @@ function showQuestion() {
   })
 
   function showBirdItemInformation() {
-    pauseCurrentSong();
     birdCard.classList.remove("card-display");
     instruction.classList.add("instruction-display");
     let birdItemName = this.querySelector(".bird-title");
@@ -184,6 +183,7 @@ function playAudioQuestion() {
   if (!isPlay) {
     playCurrentSong()
     isPlay = true;
+    pauseBirdSongInfo()
 
   } else {
     pauseCurrentSong()
@@ -196,6 +196,7 @@ function playAudioInfo() {
   if (!isPlay) {
     playBirdSongInfo()
     isPlay = true;
+    pauseCurrentSong()
   } else {
     pauseBirdSongInfo()
     isPlay = false;
@@ -259,9 +260,9 @@ function updateProgressValue() {
 currentBirdVoice.addEventListener("timeupdate", updateProgressValue);
 currentBirdVoice.addEventListener('ended', () => {
   audioPlayQuestion.classList.remove("pause");
-  songCurrentTime.textContent = "0:00"
+  songCurrentTime.textContent = "0:00";
   currentBirdVoice.currentTime = audioBird.currentTime;
-  isPlay = false
+  isPlay = false;
 })
 
 const audioProgressInfoBird = document.querySelector(".card-player .progress-bar");
@@ -283,9 +284,9 @@ function updateProgressValueForBirdInfo() {
 infoBirdVoice.addEventListener("timeupdate", updateProgressValueForBirdInfo);
 infoBirdVoice.addEventListener('ended', () => {
   infoBirdVoice.classList.remove("pause");
-  songCurrentTimeInfoBird.textContent = "0:00"
+  songCurrentTimeInfoBird.textContent = "0:00";
   infoBirdVoice.currentTime = audioBird.currentTime;
-  isPlay = false
+  isPlay = false;
 })
 
 
