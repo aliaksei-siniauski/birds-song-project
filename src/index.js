@@ -10,7 +10,6 @@ let gameScore = document.querySelector(".score__point")
 let currentItemSong = new Audio('/src/music/correct-answer.wav')
 let wrongItemSong = new Audio('/src/music/wrong-answer.mp3')
 
-let currentTime = 0;
 let audioBird = new Audio();
 
 
@@ -39,7 +38,7 @@ const cicleItems = document.querySelectorAll(".cicle")
 const gameOver = document.querySelector(".game-over")
 const gaveOverScore = document.querySelector('.game-over__subtitle')
 let audioPlayQuestion = document.querySelector('.question__player .question__player-icon')
-let audioCardPlayer = document.querySelector('.card__player')
+let audioCardPlayer = document.querySelector('.card-player .player-icon')
 
 
 
@@ -64,6 +63,7 @@ function showQuestion() {
   })
 
   function showBirdItemInformation() {
+    pauseCurrentSong();
     birdCard.classList.remove("card-display");
     instruction.classList.add("instruction-display");
     let birdItemName = this.querySelector(".bird-title");
@@ -118,14 +118,15 @@ function showQuestion() {
 
 }
 
-
 showQuestion()
 
 
 function goToTheNextLevel() {
   pauseCurrentSong()
   songCurrentTime.textContent = "0:00";
-  audioProgress.style.width = "0" + '%';
+  pauseBirdSongInfo()
+  songCurrentTimeInfoBird.textContent = "0:00";
+  audioProgressInfoBird.style.width = "0" + '%';
   levelButton.style.color = "red";
   levelButton.style.backgroundColor = '#303030';
   birdCard.classList.add("card-display");
@@ -148,6 +149,8 @@ function goToTheNextLevel() {
   showQuestion();
 
 }
+
+
 levelButton.addEventListener("click", goToTheNextLevel)
 
 
@@ -161,8 +164,8 @@ function showFinishModal() {
 /* Audio */
 
 audioPlayQuestion.addEventListener('click', playAudioQuestion);
-/* audioCardPlayer.addEventListener('click', playAudioInfo);
- */
+audioCardPlayer.addEventListener('click', playAudioInfo);
+
 
 
 function loadedCurrentAudioBirdSong() {
@@ -170,8 +173,14 @@ function loadedCurrentAudioBirdSong() {
 }
 
 
+function loadedInfoAudioBirdSong() {
+  infoBirdVoice.onloadedmetadata
+}
+
+
 
 function playAudioQuestion() {
+
   if (!isPlay) {
     playCurrentSong()
     isPlay = true;
@@ -182,10 +191,26 @@ function playAudioQuestion() {
   }
 }
 
+
+function playAudioInfo() {
+  if (!isPlay) {
+    playBirdSongInfo()
+    isPlay = true;
+  } else {
+    pauseBirdSongInfo()
+    isPlay = false;
+  }
+}
+
+
 function playCurrentSong() {
   audioPlayQuestion.classList.add("pause");
   currentBirdVoice.play();
+}
 
+function playBirdSongInfo() {
+  audioCardPlayer.classList.add("pause");
+  infoBirdVoice.play();
 }
 
 function pauseCurrentSong() {
@@ -193,8 +218,10 @@ function pauseCurrentSong() {
   audioPlayQuestion.classList.remove("pause");
 }
 
-
-
+function pauseBirdSongInfo() {
+  infoBirdVoice.pause();
+  audioCardPlayer.classList.remove("pause");
+}
 
 
 const getTimeCodeFromNum = (currentTime) => {
@@ -219,16 +246,15 @@ let songDuration = document.querySelector('.total-time');
 let songCurrentTime = document.querySelector('.current-time');
 const timeline = document.querySelector(".timeline");
 
+
 function updateProgressValue() {
   if (currentBirdVoice.duration) {
     songDuration.textContent = getTimeCodeFromNum(currentBirdVoice.duration);
     songCurrentTime.textContent = getTimeCodeFromNum(currentBirdVoice.currentTime);
     audioProgress.style.width = (currentBirdVoice.currentTime / currentBirdVoice.duration) * 100 + "%";
     timeline.addEventListener("click", rewindTimline);
-
   }
 }
-
 
 currentBirdVoice.addEventListener("timeupdate", updateProgressValue);
 currentBirdVoice.addEventListener('ended', () => {
@@ -238,9 +264,37 @@ currentBirdVoice.addEventListener('ended', () => {
   isPlay = false
 })
 
+const audioProgressInfoBird = document.querySelector(".card-player .progress-bar");
+let songDurationInfoBird = document.querySelector('.card-player .total-time');
+let songCurrentTimeInfoBird = document.querySelector('.card-player .current-time');
+const timelineInfoBird = document.querySelector(".card-player .timeline");
+
+
+function updateProgressValueForBirdInfo() {
+  if (infoBirdVoice.duration) {
+    songDurationInfoBird.textContent = getTimeCodeFromNum(infoBirdVoice.duration);
+    songCurrentTimeInfoBird.textContent = getTimeCodeFromNum(infoBirdVoice.currentTime);
+    audioProgressInfoBird.style.width = (infoBirdVoice.currentTime / infoBirdVoice.duration) * 100 + "%";
+    timelineInfoBird.addEventListener("click", rewindTimlineForInfoBird);
+  }
+}
+
+
+infoBirdVoice.addEventListener("timeupdate", updateProgressValueForBirdInfo);
+infoBirdVoice.addEventListener('ended', () => {
+  infoBirdVoice.classList.remove("pause");
+  songCurrentTimeInfoBird.textContent = "0:00"
+  infoBirdVoice.currentTime = audioBird.currentTime;
+  isPlay = false
+})
+
+
+
 
 /* Click on timeline to skip around
  */
+
+
 
 function rewindTimline(el) {
   const timlineWidth = el.target.offsetWidth;
@@ -250,7 +304,19 @@ function rewindTimline(el) {
 };
 
 
+function rewindTimlineForInfoBird(el) {
+  const timlineWidth = el.target.offsetWidth;
+  const clickOffSetX = el.offsetX;
+  const durationAudioTrek = infoBirdVoice.duration;
+  infoBirdVoice.currentTime = (clickOffSetX / timlineWidth) * durationAudioTrek;
+};
+
+
+
+
 /* click volume slider to change volume */
+
+
 
 const volumeIcon = document.querySelector(".volume-icon");
 volumeIcon.addEventListener("click", () => {
