@@ -131,38 +131,6 @@ volumeRange.oninput = () => {
 
 
 
-function playAudioQuestion() {
-    audioBird.currentTime = 0;
-    audioBird.src = currentBirdVoice.src;
-    updateProgressbar()
-    if (!isPlay) {
-        audioBird.play();
-        isPlay = true;
-        audioPlayQuestion.classList.add("pause");
-    } else {
-        audioBird.pause();
-        isPlay = false;
-        audioPlayQuestion.classList.remove("pause");
-    }
-
-}
-
-function playAudioInfo() {
-    audioBird.currentTime = 0;
-    audioBird.src = infoBirdVoice.src;
-    updateProgressbarInfo()
-    if (!isPlay) {
-        audioBird.play();
-        isPlay = true;
-        audioCardPlayer.classList.add("pause");
-    } else {
-        audioBird.pause();
-        isPlay = false;
-        audioCardPlayer.classList.remove("pause");
-    }
-}
-
-
 
 const getTimeCodeFromNum = (currentTime) => {
     let currentSeconds = parseInt(currentTime);
