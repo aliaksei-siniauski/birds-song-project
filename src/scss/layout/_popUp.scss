@@ -30,7 +30,8 @@
 .game-over__img {
     position: absolute;
     width: 100%;
-    height: auto;
+    height: 100%;
+    min-height: 50vh;
 }
 
 .game-over__subtitle {

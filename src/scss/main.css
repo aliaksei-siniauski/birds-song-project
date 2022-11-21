@@ -153,7 +153,6 @@ article {
 .container {
   max-width: 1130px;
   margin: 0 auto;
-  padding-inline: 3rem;
 }
 
 /* Layout  */
@@ -162,7 +161,6 @@ article {
 }
 
 .question__container {
-  max-width: 1070px;
   justify-content: space-between;
   background: #303030;
   gap: 5rem;
@@ -263,7 +261,7 @@ article {
 
 .level__container {
   display: flex;
-  padding: 0 3rem 0.4rem;
+  padding: 0 0 0.4rem;
 }
 
 .level__button {
@@ -308,7 +306,8 @@ article {
 .game-over__img {
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 100%;
+  min-height: 50vh;
 }
 
 .game-over__subtitle {
@@ -620,6 +619,10 @@ article {
   }
 }
 
+.pause {
+  background-image: url("/src/svg/pause.svg");
+}
+
 .card__text {
   text-align: justify;
 }
@@ -628,12 +631,6 @@ article {
     font-size: 2vh;
   }
 }
-@media (max-width: 535px) {
-  .card__text {
-    max-width: 285px;
-  }
-}
-
 /* Pages */
 .start__body {
   background-repeat: no-repeat;

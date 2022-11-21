@@ -55,6 +55,11 @@
 
 }
 
+
+.pause {
+    background-image: url("/src/svg/pause.svg");
+}
+
 .card__text {
     text-align: justify;
 
@@ -62,8 +67,6 @@
         font-size: 2vh;
     }
 
-    @media(max-width: 535px) {
-        max-width: 285px;
-    }
+    @media(max-width: 535px) {}
 
 }
