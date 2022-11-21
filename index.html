@@ -2,170 +2,36 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Birds</title>
-  <link rel="stylesheet" href="src/scss/main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birds Song Quiz</title>
+    <link rel="stylesheet" href="src/scss/main.css">
+
 </head>
 
-<body>
-  <header class="header">
-    <div class="container header__container">
-      <div class="header__top">
-        <a class="logo header__logo" href="index.html"></a>
-        <h5 class="score">Score:
-          <span class="score__point">0</span>
-        </h5>
-      </div> <!-- close header-top -->
-      <nav class="menu">
-        <ul class="list">
-          <li class="list__item">
-            <a href="#" class="list__link list__link--active">Размінка</a>
-          </li>
-          <li class="list__item">
-            <a href="#" class="list__link">Вераб'іныя </a>
-          </li>
-          <li class="list__item">
-            <a href="#" class="list__link">Лясныя птушкі</a>
-          </li>
-          <li class="list__item">
-            <a href="#" class="list__link">Пявучыя птушкі</a>
-          </li>
-          <li class="list__item">
-            <a href="#" class="list__link">Драпежныя птушкі</a>
-          </li>
-          <li class="list__item">
-            <a href="#" class="list__link">Марскія птушкі</a>
-          </li>
-        </ul> <!-- close menu-list -->
-      </nav> <!-- close menu -->
-    </div> <!-- close header-container -->
-  </header>
-  <main>
-    <div class="question">
-      <div class="container question__container">
-        <img class="question-bird__img" src="src/images/bird.jpg" class="question__img" alt="bird">
-        <div class="question__content">
-          <h2 class="question__title">*****</h2>
-          <div class="player question__player">
-            <div class="player-controls">
-              <button class="play player-icon question__player-icon"></button>
-            </div> <!-- close player-controls -->
-            <div class="progress">
-              <div class="slider-timeline">
-                <div class="current-time">0:00</div>
-                <div class="timeline">
-                  <div class="progress-bar"></div>
+<body class="start__body">
+    <header class="start__header">
+        <div class="container start__container">
+            <h1 class="start__title">Birds Voice Quiz</h1>
+        </div>
+    </header>
+    <main>
+        <section class="quiz-introduction">
+            <div class="container start__container">
+                <p class="quiz-introduction__text">
+                    Вакол нас шмат розных відаў мясцовых птушак. Але часам мы не бачым іх, а толькі чуем! Ці гатовыя
+                    вы прайсці віктарыну, каб даведацца, наколькі добра вы ведаеце спевы птушак? Калі так, тады
+                    націсніце на кнопку 'Пачаць',
+                    прайдзіце віктарыну і паглядзіце, колькі птушак вы правільна вызначылі. Поспехаў!!!
+                </p>
+                <div class="quiz-introduction__buttons">
+                    <a class="button start__button" href="quiz.html">Пачаць</a>
+                    <a class="button start__button" href="gallery.html">Галерэя</a>
                 </div>
-                <div class="total-time">0:00</div>
-              </div>
-              <!-- close slider-titmeline -->
-              <div class="volume">
-                <button class="volume-icon"></button>
-                <input class="volume-range" type="range" value="50" min="0" max="100" name="volume" />
-                <progress class="volume-progress" min="0" max="100" value="50"></progress>
-              </div>
-            </div>
-          </div> <!-- close player -->
-        </div> <!-- question-content -->
-      </div> <!-- close container -->
-    </div> <!-- close question -->
-    <div class="answers">
-      <div class="container answers__container layout-2-column">
-        <div class="answer">
-          <ul class="answer-list">
-            <li class="answer-list__item">
-              <span class="cicle"></span>
-              <p class="bird-title">Крумкач</p>
-            </li>
-            <li class="answer-list__item">
-              <span class="cicle"></span>
-              <p class="bird-title">Журавель</p>
-            </li>
-            <li class="answer-list__item">
-              <span class="cicle"></span>
-              <p class="bird-title">Ластаўка</p>
-            </li>
-            <li class="answer-list__item">
-              <span class="cicle"></span>
-              <p class="bird-title">Ляляк</p>
-            </li>
-            <li class="answer-list__item">
-              <span class="cicle"></span>
-              <p class="bird-title">Зязюля</p>
-            </li>
-            <li class="answer-list__item">
-              <span class="cicle"></span>
-              <p class="bird-title">Сініца</p>
-            </li>
-          </ul> <!-- close answer-list -->
-        </div> <!-- close answer -->
-        <div class="bird-description">
-          <div class="instruction">
-            <p class="instruction__item">Паслухай плэер</p>
-            <p class="instruction__item">Выбяры птушку з спіса</p>
-          </div>
-          <div class="card card-display">
-            <div class="card-top">
-              <img class="card__img">
-              <div class="player card-player">
-                <div class="player-controls">
-                  <button class="play player-icon"></button>
-                </div> <!-- close player-controls -->
-                <div class="progress">
-                  <div class="slider-timeline">
-                    <div class="current-time">0:00</div>
-                    <div class="timeline">
-                      <div class="progress-bar"></div>
-                    </div>
-                    <div class="total-time">0:00</div>
-                  </div>
-                  <!-- close slider-titmeline -->
-                  <div class="volume">
-                    <button class="volume-icon"></button>
-                    <input class="volume-range" type="range" value="50" min="0" max="100" name="volume" />
-                    <progress class="volume-progress" min="0" max="100" value="50"></progress>
-                  </div>
-                </div>
-              </div> <!-- close player -->
-            </div>
-            <div class="card__description">
-              <h3 class="card__name"></h3>
-              <span class="card__soecies"></span>
-              <p class="card__text"></p>
-            </div> <!-- close card-description -->
-          </div> <!-- close card -->
-        </div> <!-- clsoe bird-description -->
-      </div> <!-- close container -->
-    </div> <!-- close answers -->
-    <div class="level">
-      <div class="container level__container">
-        <button class="level__button">Наступны ўзровень</button>
-      </div>
-    </div>
-  </main>
-  <footer>
-  </footer>
-  <div class="game-over game-over__display">
-    <div class="game-over__container">
-      <img class="game-over__img" src="/src/images/modal-bg.webp" alt="modal-img">
-      <div class="game__contact">
-        <h1 class="game-over__title">Віншую</h1>
-        <p class="game-over__subtitle">
-          Вы прайшлі віктаріну з вынікам
-        </p>
-        <a class="button game-over__button" href="#">
-          Галоўная старонка
-        </a>
-        <a class="button game-over__button" href="#">
-          Згуляць пановаму
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <script type="module" src="src/index.js"></script>
+        </section>
+    </main>
+    <footer></footer>
 </body>
 
 </html>

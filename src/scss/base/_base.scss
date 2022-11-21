@@ -10,4 +10,9 @@ body {
 
 .layout-2-column {
   @include columns($width: calc(50% - 30px));
+
+  @media (max-width: 768px) {
+    @include columns($width: 100%);
+
+  }
 }

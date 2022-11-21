@@ -1,8 +1,16 @@
+.question {}
+
 .question__container {
+    max-width: 1070px;
     @extend %flex;
     justify-content: space-between;
-    gap: 5rem;
     background: $color-bg;
+    gap: 5rem;
+
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
 }
 
 .question__content {
@@ -11,8 +19,16 @@
 
 .question-bird__img {
     width: 300px;
+
+    @media (max-width: 768px) {
+        width: 100%
+    }
 }
 
 .question__title {
     font-size: 3vh;
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
 }

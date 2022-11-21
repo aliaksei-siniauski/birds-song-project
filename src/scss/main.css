@@ -44,6 +44,11 @@ body {
 .layout-2-column > * {
   flex-basis: calc(50% - 30px);
 }
+@media (max-width: 768px) {
+  .layout-2-column > * {
+    flex-basis: 100%;
+  }
+}
 
 html {
   font-size: 100%;
@@ -146,8 +151,9 @@ article {
 }
 /*Utilities  */
 .container {
-  max-width: 1140px;
+  max-width: 1130px;
   margin: 0 auto;
+  padding-inline: 3rem;
 }
 
 /* Layout  */
@@ -156,9 +162,16 @@ article {
 }
 
 .question__container {
+  max-width: 1070px;
   justify-content: space-between;
-  gap: 5rem;
   background: #303030;
+  gap: 5rem;
+}
+@media (max-width: 768px) {
+  .question__container {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }
 
 .question__content {
@@ -168,9 +181,19 @@ article {
 .question-bird__img {
   width: 300px;
 }
+@media (max-width: 768px) {
+  .question-bird__img {
+    width: 100%;
+  }
+}
 
 .question__title {
   font-size: 3vh;
+}
+@media (max-width: 768px) {
+  .question__title {
+    text-align: center;
+  }
 }
 
 .answers {
@@ -192,11 +215,14 @@ article {
   transition: ease-in-out 0.5s;
   color: rgba(231, 15, 15, 0.7);
 }
+@media (max-width: 768px) {
+  .answer-list__item {
+    width: 100%;
+  }
+}
 
 .answers__container {
-  display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .cicle {
@@ -225,6 +251,11 @@ article {
 .instruction__item {
   font-size: 3vh;
 }
+@media (max-width: 768px) {
+  .instruction__item {
+    font-size: 2vh;
+  }
+}
 
 .bird-description {
   background: #303030;
@@ -232,7 +263,7 @@ article {
 
 .level__container {
   display: flex;
-  padding: 0 0 0.4rem 0;
+  padding: 0 3rem 0.4rem;
 }
 
 .level__button {
@@ -255,13 +286,14 @@ article {
   height: 100%;
   z-index: 1000;
 }
-.game-over.display {
+.game-over--display {
   display: none;
 }
 
 .game-over__container {
   position: absolute;
   width: 90%;
+  min-height: 338px;
   max-width: 600px;
   top: 30%;
   left: 50%;
@@ -335,6 +367,12 @@ article {
 .list__item {
   flex: auto;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .list__item {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .list__link {
@@ -450,6 +488,11 @@ article {
   justify-content: flex-end;
   padding-right: 120px;
 }
+@media (max-width: 768px) {
+  .volume {
+    justify-content: flex-start;
+  }
+}
 
 .volume-icon {
   background-image: url("/src/svg/volume.svg");
@@ -522,6 +565,11 @@ article {
 .card {
   padding: 2rem;
 }
+@media (max-width: 768px) {
+  .card {
+    text-align: center;
+  }
+}
 
 .card-display {
   display: none;
@@ -537,19 +585,53 @@ article {
   width: 180px;
   height: 160px;
 }
+@media (max-width: 768px) {
+  .card__img {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+  }
+}
+@media (max-width: 535px) {
+  .card__img {
+    width: 250px;
+    height: 250px;
+  }
+}
 
 .card-top {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
 }
+@media (max-width: 768px) {
+  .card-top {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
 
 .card-player {
   width: 70%;
 }
+@media (max-width: 768px) {
+  .card-player {
+    width: 100%;
+  }
+}
 
 .card__text {
   text-align: justify;
+}
+@media (max-width: 768px) {
+  .card__text {
+    font-size: 2vh;
+  }
+}
+@media (max-width: 535px) {
+  .card__text {
+    max-width: 285px;
+  }
 }
 
 /* Pages */
@@ -557,7 +639,7 @@ article {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 50.99%, rgba(255, 255, 255, 0) 107.27%), url("/src/images/start-background.jpg");
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 50.99%, rgba(255, 255, 255, 0) 107.27%), url("/src/images/birds-start.png");
   backdrop-filter: blur(2px);
 }
 
@@ -607,7 +689,12 @@ article {
   -webkit-box-shadow: rgba(0, 0, 0, 0.55) 0 1px 6px;
   -moz-box-shadow: rgba(0, 0, 0, 0.55) 0 1px 6px;
   box-shadow: rgba(0, 0, 0, 0.55) 0 1px 6px;
+  transition: ease-in-out 0.5s;
   color: #f3f3f3;
+}
+.start__button:hover {
+  transform: scale(1.3);
+  background: #266626;
 }
 
 /*# sourceMappingURL=main.css.map */

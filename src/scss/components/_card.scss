@@ -1,10 +1,15 @@
 .card {
     padding: 2rem;
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
 }
 
 .card-display {
     display: none;
 }
+
 
 .card__description {
     display: flex;
@@ -16,19 +21,49 @@
     width: 180px;
     height: 160px;
 
+    @media (max-width: 768px) {
+        margin: 0 auto;
+        width: 300px;
+        height: 300px;
+
+    }
+
+    @media (max-width: 535px) {
+        width: 250px;
+        height: 250px;
+    }
 }
 
 .card-top {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
 }
 
 .card-player {
     width: 70%;
 
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+
 }
 
 .card__text {
     text-align: justify;
+
+    @media(max-width: 768px) {
+        font-size: 2vh;
+    }
+
+    @media(max-width: 535px) {
+        max-width: 285px;
+    }
+
 }

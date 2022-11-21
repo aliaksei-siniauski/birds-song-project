@@ -7,7 +7,7 @@
     height: 100%;
     z-index: 1000;
 
-    &.display {
+    &--display {
         display: none;
     }
 }
@@ -15,6 +15,7 @@
 .game-over__container {
     position: absolute;
     width: 90%;
+    min-height: 338px;
     max-width: 600px;
     top: 30%;
     left: 50%;
@@ -30,7 +31,6 @@
     position: absolute;
     width: 100%;
     height: auto;
-
 }
 
 .game-over__subtitle {

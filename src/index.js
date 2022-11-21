@@ -29,6 +29,7 @@ const categoryLink = document.querySelectorAll('.list__link')
 const birdItemName = document.querySelectorAll(".bird-title")
 const cicleItems = document.querySelectorAll(".cicle")
 let audioPlayQuestion = document.querySelector('.player-icon')
+const gameOver = document.querySelector(".game-over")
 const gaveOverScore = document.querySelector('.game-over__subtitle')
 
 
@@ -135,9 +136,9 @@ levelButton.addEventListener("click", goToTheNextLevel)
 
 
 function showFinishModal() {
-  const main = document.querySelector('main')
-  main.textContent = '';
-  gaveOverScore.textContent = "Вы прайшлі віктаріну з вынікам + 'score' + '/30'. Паспрабаваць яшчэ?";
+  gameOver.classList.remove('game-over--display');
+  gaveOverScore.textContent = "Вы прайшлі віктаріну з вынікам " + score + "/30. Паспрабаваць яшчэ?";
+
 }
 
 
