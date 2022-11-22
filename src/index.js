@@ -325,8 +325,8 @@ function rewindTimlineForInfoBird(el) {
 
 const volumeIcon = document.querySelector(".volume-icon");
 volumeIcon.addEventListener("click", () => {
-    audioBird.muted = !audioBird.muted;
-    if (!audioBird.muted) {
+    currentBirdVoice.muted = !currentBirdVoice.muted;
+    if (!currentBirdVoice.muted) {
         volumeIcon.classList.remove("mute");
 
     } else {
@@ -336,7 +336,7 @@ volumeIcon.addEventListener("click", () => {
 
 const volumeRange = document.querySelector(".volume-range");
 volumeRange.addEventListener("input", () => {
-    audioBird.volume = Math.trunc(volumeRange.value) / 100;
+    currentBirdVoice.volume = Math.trunc(volumeRange.value) / 100;
     if (volumeRange.value == 0) {
         volumeIcon.classList.add("mute");
     } else {
