@@ -47,6 +47,7 @@ function getRandomNum() {
     return Math.floor((Math.random() * 6));
 }
 
+showQuestion()
 
 function showQuestion() {
     let currentQuestionItem = birdsDataBy[questionIndex];
@@ -99,9 +100,13 @@ function showQuestion() {
             birdItem.forEach(item => {
                 item.removeEventListener('click', showRightAnswer);
             });
-            console.log("This is current answer");
             if (questionIndex < 5) {
                 questionIndex++;
+            }
+            if (levelButton.textContent === 'Завяршыць') {
+                levelButton.addEventListener('click', showFinishModal);
+            } else {
+                levelButton.addEventListener('click', goToTheNextLevel);
             }
         }
         else {
@@ -117,7 +122,6 @@ function showQuestion() {
 
 }
 
-showQuestion()
 
 
 function goToTheNextLevel() {
@@ -143,8 +147,7 @@ function goToTheNextLevel() {
     isPlay = false;
 
     if (questionIndex === 5) {
-        levelButton.textContent = 'Паспрабаваць яшчэ';
-        showFinishModal()
+        levelButton.textContent = 'Завяршыць';
     }
     showQuestion();
 
