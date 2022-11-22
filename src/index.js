@@ -361,8 +361,9 @@ volumeIconCard.addEventListener("click", () => {
     }
 });
 
+
 const volumeRangeCard = document.querySelector(".card-player .volume-range");
-volumeIconCard.addEventListener("input", () => {
+volumeRangeCard.addEventListener("input", () => {
     infoBirdVoice.volume = Math.trunc(volumeRangeCard.value) / 100;
     if (volumeRangeCard.value == 0) {
         volumeIconCard.classList.add("mute");
@@ -375,3 +376,4 @@ volumeRangeCard.oninput = () => {
     let volumeProgressCard = document.querySelector(".card-player .volume-progress");
     volumeProgressCard.value = volumeRangeCard.value;
 };
+
