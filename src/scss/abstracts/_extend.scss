@@ -10,6 +10,10 @@
     justify-content: space-between;
 }
 
+%js-content-center {
+    justify-content: center;
+}
+
 %al-items-center {
     align-items: center;
 }
@@ -28,6 +32,9 @@
     transition: 0.3s;
 }
 
+%cursor-pointer {
+    cursor: pointer
+}
 
 @mixin columns($width) {
     @extend %flex;
