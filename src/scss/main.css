@@ -283,13 +283,16 @@ article {
   z-index: 1000;
   background: rgba(0, 0, 0, 0.6);
 }
+.game-over--display {
+  display: none;
+}
+
 .game-over__container {
   position: absolute;
   top: 30%;
   left: 50%;
   bottom: 50%;
   width: 90%;
-  height: 50vh;
   min-height: 338px;
   max-width: 600px;
   font-size: 2vh;
