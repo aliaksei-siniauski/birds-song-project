@@ -11,5 +11,13 @@
     "sass": "^1.53.0"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "[Online-zoo](https://rolling-scopes-school.github.io/aliaksei-siniauski-JSFE2022Q3/)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/aliaksei-siniauski-JSFE2022Q3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/aliaksei-siniauski-JSFE2022Q3/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/aliaksei-siniauski-JSFE2022Q3#readme"
 }

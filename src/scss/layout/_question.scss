@@ -1,13 +1,10 @@
-.question {}
-
 .question__container {
     @extend %flex;
-    justify-content: space-between;
-    background: $color-bg;
+    @extend %js-content-space-between;
     gap: 5rem;
+    background: $color-bg;
 
     @media (max-width: 768px) {
-
         flex-wrap: wrap;
         gap: 1rem;
     }

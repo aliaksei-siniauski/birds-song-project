@@ -1,16 +1,16 @@
 .level__container {
-    display: flex;
+    @extend %flex;
     padding: 0 0 .4rem;
 
 }
 
 .level__button {
-    display: inline-block;
     width: 100%;
-    background: #303030;
-    color: $color-light;
-    border: none;
+    display: inline-block;
     padding: 1rem 0;
+    background: $color-bg;
+    color: $color-light;
     text-align: center;
-    cursor: pointer;
+    border: none;
+    @extend %cursor-pointer;
 }

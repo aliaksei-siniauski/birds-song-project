@@ -12,8 +12,8 @@
 
 
 .card__description {
-    display: flex;
-    flex-direction: column;
+    @extend %flex;
+    @extend %flex-column;
     gap: 2rem;
 }
 
@@ -35,8 +35,8 @@
 }
 
 .card-top {
-    display: flex;
-    justify-content: space-between;
+    @extend %flex;
+    @extend %js-content-space-between;
     gap: 2rem;
 
     @media (max-width: 768px) {

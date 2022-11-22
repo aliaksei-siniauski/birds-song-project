@@ -1,0 +1,20 @@
+.footer {}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    align-items: center;
+    background: $color-active-menu;
+}
+
+.footer-logo {
+    display: block;
+    width: 150px;
+    height: 55px;
+    background: url("../svg/rs.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}

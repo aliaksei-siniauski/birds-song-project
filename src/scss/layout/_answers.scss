@@ -1,23 +1,21 @@
 .answers {
-
     padding: .4rem 0;
 }
 
-
 .answer-list__item {
-    display: flex;
-    align-items: center;
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
+    @extend %flex;
+    @extend %al-items-center;
     padding: 2.5rem;
     background-color: #303030;
     font-size: 2vh;
     border: 1px solid #555;
-    cursor: pointer;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    @extend %cursor-pointer;
 
     &:hover {
         transition: ease-in-out .5s;
-        color: rgba(231, 15, 15, 0.7);
+        color: $color-wrong-answer;
     }
 
     @media (max-width: 768px) {
@@ -27,7 +25,6 @@
 
 .answers__container {
     flex-wrap: wrap;
-
 }
 
 .cicle {
@@ -38,16 +35,16 @@
     margin-right: 15px;
     border-radius: 50%;
     -webkit-transition: .1s;
-    transition: .1s;
+    transition: ease-in-out .2s;
 }
 
 .instruction {
-    display: flex;
-    align-items: center;
-    padding: 5rem 0;
-    justify-content: center;
-    flex-direction: column;
+    @extend %flex;
+    @extend %flex-column;
+    @extend %al-items-center;
+    @extend %js-content-center;
     gap: 4rem;
+    padding: 5rem 0;
 
     &.instruction-display {
         display: none;
@@ -64,5 +61,5 @@
 }
 
 .bird-description {
-    background: #303030;
+    background: $color-bg;
 }
