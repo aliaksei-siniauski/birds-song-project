@@ -348,3 +348,30 @@ volumeRange.oninput = () => {
     let volumeProgress = document.querySelector(".volume-progress");
     volumeProgress.value = volumeRange.value;
 };
+
+
+
+const volumeIconCard = document.querySelector(".card-player .volume-icon");
+volumeIconCard.addEventListener("click", () => {
+    infoBirdVoice.muted = !infoBirdVoice.muted;
+    if (!infoBirdVoice.muted) {
+        volumeIconCard.classList.remove("mute");
+    } else {
+        volumeIconCard.classList.add("mute");
+    }
+});
+
+const volumeRangeCard = document.querySelector(".card-player .volume-range");
+volumeIconCard.addEventListener("input", () => {
+    infoBirdVoice.volume = Math.trunc(volumeRangeCard.value) / 100;
+    if (volumeRangeCard.value == 0) {
+        volumeIconCard.classList.add("mute");
+    } else {
+        volumeIconCard.classList.remove("mute");
+    }
+});
+
+volumeRangeCard.oninput = () => {
+    let volumeProgressCard = document.querySelector(".card-player .volume-progress");
+    volumeProgressCard.value = volumeRangeCard.value;
+};
