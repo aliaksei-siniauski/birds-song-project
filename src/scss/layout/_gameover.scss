@@ -8,9 +8,7 @@
     background: rgba(0, 0, 0, 0.6);
 
 
-    &--display {
-        display: none;
-    }
+    &--display {}
 }
 
 .game-over__container {
@@ -19,6 +17,7 @@
     left: 50%;
     bottom: 50%;
     width: 90%;
+    height: 50vh;
     min-height: 338px;
     max-width: 600px;
     font-size: 2vh;
